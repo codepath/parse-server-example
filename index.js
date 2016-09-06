@@ -40,13 +40,13 @@ if (process.env.S3_ENABLE) {
 }
 
 var api = new ParseServer({
-  databaseURI: databaseUri || 'mongodb://localhost:27017/dev',
+  databaseURI: databaseUri || 'mongodb://heroku_39ctsbls:m95s4uhj18pmt7j80chunufcpu@ds019976.mlab.com:19976/heroku_39ctsbls',
   cloud: process.env.CLOUD_CODE_MAIN || __dirname + '/cloud/main.js',
-  appId: process.env.APP_ID || 'myAppId',
-  masterKey: process.env.MASTER_KEY || '', //Add your master key here. Keep it secret!
+  appId: process.env.APP_ID || 'CatchYaAppId',
+  masterKey: process.env.MASTER_KEY || 'CatchyaMasterEoss', //Add your master key here. Keep it secret!
   push: pushConfig,
   filesAdapter: filesAdapter,
-  serverURL: process.env.SERVER_URL || 'http://localhost/parse'  // needed for Parse Cloud and push notifications
+  serverURL: process.env.SERVER_URL || 'http://catchya-eoss.herokuapp.com/parse'  // needed for Parse Cloud and push notifications
 });
 // Client-keys like the javascript key or the .NET key are not necessary with parse-server
 // If you wish you require them, you can set them as options in the initialization above:
